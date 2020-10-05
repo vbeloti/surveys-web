@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "<viniciusbeloti7@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.14",
     "@types/node": "^14.11.2",
@@ -13,6 +16,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.21.3",
     "eslint-plugin-standard": "^4.0.1",
     "git-commit-msg-linter": "^3.0.0",
     "husky": "^4.3.0",
