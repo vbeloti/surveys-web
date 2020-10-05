@@ -5,7 +5,10 @@
   "author": "<viniciusbeloti7@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest --passWithNoTests",
+    "test:watch": "test -- --watch",
+    "test:staged": "test -- --findRelatedTests",
+    "test:ci": "test -- --coverage"
   },
   "devDependencies": {
     "@types/jest": "^26.0.14",
