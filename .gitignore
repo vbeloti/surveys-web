@@ -3,4 +3,4 @@ dist
 coverage
 data
 .vscode
-globalConfig.json
+public/js
