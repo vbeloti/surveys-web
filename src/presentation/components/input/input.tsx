@@ -8,9 +8,9 @@ const Input: React.FC<Props> = (props: Props) => {
   // const { state, setState } = useContext(Context)
   // const error = state[`${props.name}Error`]
 
-  // const enableInput = (event: React.FocusEvent<HTMLInputElement>): void => {
-  //   event.target.readOnly = false
-  // }
+  const enableInput = (event: React.FocusEvent<HTMLInputElement>): void => {
+    event.target.readOnly = false
+  }
   // const handleChange = (event: React.FocusEvent<HTMLInputElement>): void => {
   //   setState({
   //     ...state,
@@ -26,7 +26,7 @@ const Input: React.FC<Props> = (props: Props) => {
   return (
     <div className={Styles.inputWrap}>
       {/* <input {...props} data-testid={props.name} readOnly onFocus={enableInput} onChange={handleChange} /> */}
-      <input {...props} data-testid={props.name} readOnly />
+      <input {...props} data-testid={props.name} readOnly onFocus={enableInput} />
       {/* <span data-testid={`${props.name}-status`} title={getTitle()} className={Styles.status}>{getStatus()}</span> */}
       <span data-testid={`${props.name}-status`} title="Entrar"></span>
     </div>
