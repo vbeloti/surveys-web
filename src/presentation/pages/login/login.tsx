@@ -4,7 +4,7 @@ import Styles from './login-styles.scss'
 import Context from '@/presentation/contexts/form/form-context'
 import { Validation } from '@/presentation/protocols/validation'
 import { Authentication } from '@/domain/usecases'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 type LoginProps = {
   validation: Validation
@@ -12,6 +12,8 @@ type LoginProps = {
 }
 
 const Login = ({ validation, authentication }: LoginProps) => {
+  const history = useHistory()
+
   const [state, setState] = useState({
     isLoading: false,
     email: '',
@@ -42,6 +44,7 @@ const Login = ({ validation, authentication }: LoginProps) => {
       const account = await authentication.auth({ email: state.email, password: state.password })
 
       localStorage.setItem('accessToken', account.accessToken)
+      history.replace('/')
     } catch (error) {
       setState({ ...state, isLoading: false, mainError: error.message })
     }
