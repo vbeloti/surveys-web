@@ -1,5 +1,4 @@
 import { InvalidFieldError } from '@/validation/errors'
-import { FieldValidation } from '@/validation/protocols/field-validation'
 import { EmailValidation } from './email-validation'
 import faker from 'faker'
 
