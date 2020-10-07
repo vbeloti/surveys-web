@@ -4,6 +4,7 @@ import Styles from './login-styles.scss'
 import Context from '@/presentation/contexts/form/form-context'
 import { Validation } from '@/presentation/protocols/validation'
 import { Authentication } from '@/domain/usecases'
+import { Link } from 'react-router-dom'
 
 type LoginProps = {
   validation: Validation
@@ -58,7 +59,7 @@ const Login = ({ validation, authentication }: LoginProps) => {
 
           <SubmitButton text="Entrar" />
 
-          <span className={Styles.link}>Criar Conta</span>
+          <Link data-testid="signup" to="/signup" className={Styles.link}>Criar Conta</Link>
           <FormStatus />
         </form>
 
