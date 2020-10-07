@@ -13,12 +13,16 @@ const Login = ({ validation }: LoginProps) => {
     isLoading: false,
     email: '',
     password: '',
-    emailError: 'Campo obrigatório',
+    emailError: '',
     passwordError: 'Campo obrigatório',
     mainError: ''
   })
 
   useEffect(() => {
+    setState({
+      ...state,
+      emailError: validation.validate('email', state.email)
+    })
     validation.validate('email', state.email)
   }, [state.email])
 
