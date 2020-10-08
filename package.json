@@ -1,6 +1,6 @@
 {
   "name": "surveys-web",
-  "version": "1.2.0",
+  "version": "1.0.1",
   "main": "index.js",
   "author": "<viniciusbeloti7@gmail.com>",
   "license": "MIT",
@@ -9,9 +9,7 @@
     "test": "jest --passWithNoTests --no-cache --runInBand",
     "test:watch": "npm test -- --watch",
     "test:staged": "npm test -- --findRelatedTests",
-    "test:ci": "npm test -- --coverage",
-    "test:coveralls": "npm run test:ci && coveralls < coverage/lcov.info",
-    "check": "npm-chek -u -s"
+    "test:ci": "npm test -- --coverage"
   },
   "devDependencies": {
     "@testing-library/react": "^11.0.4",
