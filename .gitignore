@@ -1,6 +1,4 @@
 node_modules
-dist
-coverage
-data
 .vscode
+coverage
 public/js

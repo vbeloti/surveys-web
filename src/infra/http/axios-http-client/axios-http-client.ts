@@ -1,4 +1,4 @@
-import { HttpPostClient, HttpPostParams, HttpResponse } from '@/data/protocols/http'
+import { HttpPostParams, HttpResponse, HttpPostClient } from '@/data/protocols/http'
 import axios, { AxiosResponse } from 'axios'
 
 export class AxiosHttpClient implements HttpPostClient<any, any> {
@@ -9,7 +9,6 @@ export class AxiosHttpClient implements HttpPostClient<any, any> {
     } catch (error) {
       httpResponse = error.response
     }
-
     return {
       statusCode: httpResponse.status,
       body: httpResponse.data
