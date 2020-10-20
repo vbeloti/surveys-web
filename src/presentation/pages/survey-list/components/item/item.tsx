@@ -2,7 +2,11 @@ import Styles from './item-styles.scss'
 import { IconName, Icon } from '@/presentation/components'
 import React from 'react'
 
-const SurveyItem: React.FC = ({ survey }: any) => {
+type SurveyItemProps = {
+  survey: any
+}
+
+const SurveyItem: React.FC<SurveyItemProps> = ({ survey }: any) => {
   const iconName = survey.didAnswer ? IconName.thumbUp : IconName.thumbDown
   return (
     <li className={Styles.surveyItemWrap}>
