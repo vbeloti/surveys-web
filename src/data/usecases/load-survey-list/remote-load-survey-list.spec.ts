@@ -32,4 +32,12 @@ describe('RemoteLoadSurveyList', () => {
     const promise = sut.loadAll()
     await expect(promise).rejects.toThrow(new UnexpectedError())
   })
+  test('Should throw UnexpectedError if HttpGetClient returns 406', async () => {
+    const { sut, httpGetClientSpy } = makeSut()
+    httpGetClientSpy.response = {
+      statusCode: HttpStatusCode.notFound
+    }
+    const promise = sut.loadAll()
+    await expect(promise).rejects.toThrow(new UnexpectedError())
+  })
 })
