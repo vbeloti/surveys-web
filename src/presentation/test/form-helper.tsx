@@ -40,8 +40,3 @@ export const testElementExists = (fieldName: string): void => {
   const el = screen.getByTestId(fieldName)
   expect(el).toBeTruthy()
 }
-
-export const testElementText = (fieldName: string, text: string): void => {
-  const el = screen.getByTestId(fieldName)
-  expect(el.textContent).toBe(text)
-}

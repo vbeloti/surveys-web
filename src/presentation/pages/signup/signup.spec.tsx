@@ -168,7 +168,7 @@ describe('SignUp Component', () => {
     const error = new EmailInUseError()
     jest.spyOn(addAccountSpy, 'add').mockRejectedValueOnce(error)
     await simulateValidSubmit()
-    Helper.testElementText('main-error', error.message)
+    expect(screen.getByTestId('main-error')).toHaveTextContent(error.message)
     Helper.testChildCount('error-wrap', 1)
   })
 
