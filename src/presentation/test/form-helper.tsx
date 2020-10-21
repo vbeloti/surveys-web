@@ -8,11 +8,9 @@ export const testStatusForField = (
   const wrap = screen.getByTestId(`${fieldName}-wrap`)
   const field = screen.getByTestId(fieldName)
   const label = screen.getByTestId(`${fieldName}-label`)
-  expect(wrap.getAttribute('data-status')).toBe(
-    validationError ? 'invalid' : 'valid'
-  )
-  expect(field.title).toBe(validationError)
-  expect(label.title).toBe(validationError)
+  expect(wrap).toHaveAttribute('data-status', validationError ? 'invalid' : 'valid')
+  expect(field).toHaveProperty('title', validationError)
+  expect(label).toHaveProperty('title', validationError)
 }
 
 export const populateField = (
