@@ -35,8 +35,3 @@ export const populateField = (
   const input = screen.getByTestId(fieldName)
   fireEvent.input(input, { target: { value } })
 }
-
-export const testElementExists = (fieldName: string): void => {
-  const el = screen.getByTestId(fieldName)
-  expect(el).toBeTruthy()
-}
