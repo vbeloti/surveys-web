@@ -1,12 +1,13 @@
 import Styles from './item-styles.scss'
-import { IconName, Icon } from '@/presentation/components'
 import React from 'react'
+import { IconName, Icon } from '@/presentation/components'
+import { SurveyModel } from '@/domain/models'
 
 type SurveyItemProps = {
-  survey: any
+  survey: SurveyModel
 }
 
-const SurveyItem: React.FC<SurveyItemProps> = ({ survey }: any) => {
+const SurveyItem: React.FC<SurveyItemProps> = ({ survey }: SurveyItemProps) => {
   const iconName = survey.didAnswer ? IconName.thumbUp : IconName.thumbDown
   return (
     <li className={Styles.surveyItemWrap}>
