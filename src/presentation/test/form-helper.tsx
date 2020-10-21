@@ -1,11 +1,6 @@
 import { screen, fireEvent } from '@testing-library/react'
 import faker from 'faker'
 
-export const testChildCount = (fieldName: string, count: number): void => {
-  const el = screen.getByTestId(fieldName)
-  expect(el.childElementCount).toBe(count)
-}
-
 export const testStatusForField = (
   fieldName: string,
   validationError: string = ''

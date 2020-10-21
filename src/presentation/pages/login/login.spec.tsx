@@ -57,7 +57,7 @@ describe('Login Component', () => {
   test('Should start with initial state', () => {
     const validationError = faker.random.words()
     makeSut({ validationError })
-    Helper.testChildCount('error-wrap', 0)
+    expect(screen.getByTestId('error-wrap').children).toHaveLength(0)
     expect(screen.getByTestId('submit')).toBeDisabled()
     Helper.testStatusForField('email', validationError)
     Helper.testStatusForField('password', validationError)
@@ -130,7 +130,7 @@ describe('Login Component', () => {
     jest.spyOn(authenticationSpy, 'auth').mockRejectedValueOnce(error)
     await simulateValidSubmit()
     expect(screen.getByTestId('main-error')).toHaveTextContent(error.message)
-    Helper.testChildCount('error-wrap', 1)
+    expect(screen.getByTestId('error-wrap').children).toHaveLength(1)
   })
 
   test('Should call SaveAccessToken on success', async () => {
